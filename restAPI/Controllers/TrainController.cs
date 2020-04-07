@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 namespace restAPI.Controllers
 {
     [ApiController]
-    [Route("[controller]/monnaie/{monnaie}/distance/{distance}")]
+    [Route("[controller]")]
     public class TrainController : ControllerBase
     {
         const Double PRIXKILOMETRE = 0.25;
         [HttpGet]
-        public Train Get(String monnaie, Double distance)
+        public Train Get(String monnaie = "EUR", Double distance = 0)
         {
             Train train = new Train();
             double prixT = distance * PRIXKILOMETRE;
